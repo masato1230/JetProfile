@@ -5,12 +5,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
@@ -31,13 +33,22 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background,
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Spacer(modifier = Modifier.height(20.dp))
+                        Image(
+                            painter = painterResource(R.drawable.img_profile),
+                            contentDescription = "profile",
+                            modifier = Modifier
+                                .size(100.dp)
+                                .clip(RoundedCornerShape(10.dp)),
+                        )
+                        Spacer(modifier = Modifier.height(20.dp))
                         Text(
                             text = "山田 太郎",
                             color = Color.Gray,
                             fontSize = 16.sp,
                             fontWeight = FontWeight.ExtraBold,
                         )
-                        Spacer(modifier = Modifier.height(10.dp))
+                        Spacer(modifier = Modifier.height(20.dp))
                         Text(text = "職業: Androidエンジニア", color = Color.Gray, fontSize = 16.sp)
                     }
                 }
