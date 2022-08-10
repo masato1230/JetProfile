@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jp_funda.profile.ui.theme.ProfileTheme
+import com.jp_funda.profile.ui.theme.Red
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +67,11 @@ class MainActivity : ComponentActivity() {
                             horizontalAlignment = Alignment.Start,
                         ) {
                             // 会社 & 役職
-                            Text(text = "会社名: Goooogle", fontSize = 26.sp, fontWeight = FontWeight.Bold)
+                            Text(
+                                text = "会社名: Goooogle",
+                                fontSize = 26.sp,
+                                fontWeight = FontWeight.Bold
+                            )
                             Spacer(modifier = Modifier.height(10.dp))
                             Text(text = "DXカンパニー テクノロジーグループ", color = Color.Gray, fontSize = 16.sp)
                             Spacer(modifier = Modifier.height(20.dp))
@@ -84,7 +89,20 @@ class MainActivity : ComponentActivity() {
                             Text(text = "example@ezweb.ne.jp", fontSize = 16.sp)
                             Spacer(modifier = Modifier.height(5.dp))
 
-                            Divider(modifier = Modifier.clip(RoundedCornerShape(1000.dp)),thickness = 2.dp)
+                            Divider(
+                                modifier = Modifier.clip(RoundedCornerShape(1000.dp)),
+                                thickness = 2.dp
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(20.dp))
+
+                        // 詳細表示ボタン
+                        Button(
+                            modifier = Modifier.fillMaxWidth(),
+                            colors = ButtonDefaults.buttonColors(backgroundColor = Red),
+                            onClick = { /*TODO*/ },
+                        ) {
+                            Text(text = "詳細を表示", color = Color.White)
                         }
                     }
                 }
