@@ -32,7 +32,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background,
                 ) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Column(
+                        modifier = Modifier.padding(20.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
                         Spacer(modifier = Modifier.height(20.dp))
                         Image(
                             painter = painterResource(R.drawable.img_profile),
@@ -50,6 +53,16 @@ class MainActivity : ComponentActivity() {
                         )
                         Spacer(modifier = Modifier.height(20.dp))
                         Text(text = "職業: Androidエンジニア", color = Color.Gray, fontSize = 16.sp)
+                        Spacer(modifier = Modifier.height(20.dp))
+
+                        Column(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalAlignment = Alignment.Start,
+                        ) {
+                            Text(text = "会社名: Goooogle", fontSize = 26.sp, fontWeight = FontWeight.Bold)
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Text(text = "DXカンパニー テクノロジーグループ", color = Color.Gray, fontSize = 16.sp)
+                        }
                     }
                 }
             }
