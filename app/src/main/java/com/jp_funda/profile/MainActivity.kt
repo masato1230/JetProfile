@@ -6,9 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -37,6 +37,8 @@ class MainActivity : ComponentActivity() {
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
                         Spacer(modifier = Modifier.height(20.dp))
+
+                        // プロフィール画像
                         Image(
                             painter = painterResource(R.drawable.img_profile),
                             contentDescription = "profile",
@@ -45,6 +47,8 @@ class MainActivity : ComponentActivity() {
                                 .clip(RoundedCornerShape(10.dp)),
                         )
                         Spacer(modifier = Modifier.height(20.dp))
+
+                        // 名前
                         Text(
                             text = "山田 太郎",
                             color = Color.Gray,
@@ -52,6 +56,8 @@ class MainActivity : ComponentActivity() {
                             fontWeight = FontWeight.ExtraBold,
                         )
                         Spacer(modifier = Modifier.height(20.dp))
+
+                        // 職業
                         Text(text = "職業: Androidエンジニア", color = Color.Gray, fontSize = 16.sp)
                         Spacer(modifier = Modifier.height(20.dp))
 
@@ -59,9 +65,26 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.fillMaxWidth(),
                             horizontalAlignment = Alignment.Start,
                         ) {
+                            // 会社 & 役職
                             Text(text = "会社名: Goooogle", fontSize = 26.sp, fontWeight = FontWeight.Bold)
                             Spacer(modifier = Modifier.height(10.dp))
                             Text(text = "DXカンパニー テクノロジーグループ", color = Color.Gray, fontSize = 16.sp)
+                            Spacer(modifier = Modifier.height(20.dp))
+
+                            // Email
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Icon(
+                                    imageVector = Icons.Default.Email,
+                                    contentDescription = "email",
+                                )
+                                Spacer(modifier = Modifier.width(10.dp))
+                                Text(text = "Email", fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                            }
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Text(text = "example@ezweb.ne.jp", fontSize = 16.sp)
+                            Spacer(modifier = Modifier.height(5.dp))
+
+                            Divider(modifier = Modifier.clip(RoundedCornerShape(1000.dp)),thickness = 2.dp)
                         }
                     }
                 }
