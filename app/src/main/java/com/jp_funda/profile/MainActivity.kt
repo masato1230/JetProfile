@@ -62,7 +62,7 @@ fun MainContent() {
 
         // 名前
         Text(
-            text = "山田 太郎",
+            text = "石川 正人",
             color = Color.Gray,
             fontSize = 16.sp,
             fontWeight = FontWeight.ExtraBold,

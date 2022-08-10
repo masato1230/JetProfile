@@ -26,7 +26,7 @@ fun CompanySection() {
     ) {
         // 会社 & 役職
         Text(
-            text = "会社名: Goooogle",
+            text = "会社名: Goooogle(仮)",
             fontSize = 26.sp,
             fontWeight = FontWeight.Bold
         )
