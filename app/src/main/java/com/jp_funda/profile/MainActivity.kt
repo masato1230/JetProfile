@@ -7,7 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -68,16 +68,20 @@ fun MainContent() {
         Spacer(modifier = Modifier.height(20.dp))
 
         // 詳細表示ボタン
+        var isShowDetail by remember { mutableStateOf(false) }
+
         Button(
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFF85F6A)),
-            onClick = { /*TODO*/ },
+            onClick = { isShowDetail = !isShowDetail },
         ) {
-            Text(text = "詳細を表示", color = Color.White)
+            Text(text = if (isShowDetail) "詳細を非表示" else "詳細を表示", color = Color.White)
         }
         Spacer(modifier = Modifier.height(20.dp))
 
         // 趣味 & 居住地セクション
-        DetailSection()
+        if (isShowDetail) {
+            DetailSection()
+        }
     }
 }
